@@ -1,75 +1,135 @@
-# 🚀 AristoByte VSCode Color Theme
+# AristoByte VS Code Color Theme
 
-**AristoByte Theme** is a sleek, modern VS Code theme designed for developers who value **clarity, focus, and productivity**.  
-It includes **Dark mode only** with **logo-inspired accent colors** for a futuristic coding experience.
+AristoByte is a production-ready VS Code theme system built for readability, minimalism, and long developer sessions.
 
----
+## Overview
 
-## 🎨 Features
+AristoByte ships with:
 
-- **Logo-inspired palette:** `#ffee27`, `#fec800`, `#f18e35`, `#e95f32`, `#e2312d` applied to keywords, variables, strings, numbers, and constants.
-- **Dark mode only:** Switch seamlessly between environments.
-- **Terminal integration:** ANSI colors match the theme for consistent development experience.
-- **High-contrast syntax:** Clear readability without straining your eyes.
-- **UI accents:** Branded tabs, buttons, panels, and scrollbars.
-- **Semi-transparent selections:** Keeps your code visible while highlighting selections.
-- **Semantic highlighting:** Works beautifully with modern languages like TypeScript, Rust, Python, Go, and more.
+- Two complete themes (`AristoByte Dark`, `AristoByte Light`)
+- Full workbench/editor coverage
+- Onboarding dashboard inside VS Code
+- Structured documentation and support guides
 
----
+## Compatibility
 
-## 🖥 Screenshots
+- Supported VS Code version: `>=1.90.0`
+- Optimized for latest stable VS Code while remaining compatible with older supported builds
 
-### Dark Mode
+## Themes
 
-![Dark Mode Preview](screenshots/dark-1.png)
-![Dark Mode Preview](screenshots/dark-2.png)
-![Dark Mode Preview](screenshots/dark-3.png)
+### AristoByte Dark
 
-### Light Mode
+- Brand-forward dark experience
+- Broad VS Code component coverage
+- Semantic token support
 
-Please do not ever use light modes :D
+### AristoByte Light
 
----
+- Light counterpart with readability-tuned contrast
+- Same structural key coverage as dark
+- Brand association preserved with adapted light-safe accents
 
-## ⚡ Installation
+## In-Editor Dashboard
 
-**Via VS Code Marketplace:**
+AristoByte includes a native walkthrough dashboard (inside the extension view) with:
 
-1. Open VS Code → Extensions tab.
-2. Search for **AristoByte Theme**.
-3. Click **Install**.
-4. Select your preferred mode: currently Dark only.
+- Overview
+- Installation
+- Customization
+- Accessibility
+- Troubleshooting
 
-**Manual Installation:**
+You can open it via command palette:
 
-1. Download the `.vsix` file from this repo.
-2. Open VS Code → Extensions → `...` → Install from VSIX.
+- `AristoByte: Open Getting Started Dashboard`
+
+## Commands
+
+- `AristoByte: Open Getting Started Dashboard`
+- `AristoByte: Open Documentation Index`
+- `AristoByte: Open Marketplace/Homepage`
+- `AristoByte: Apply Dark Theme`
+- `AristoByte: Apply Light Theme`
+
+## Settings
+
+- `aristobyteTheme.showWalkthroughOnInstallOrUpdate`
+- `aristobyteTheme.defaultThemeOnInstall`
+- `aristobyteTheme.openDocsInEditor`
+
+## Documentation Portal
+
+- Index: `docs/INDEX.md`
+- Features/runtime: `docs/FEATURES.md`
+- Overview: `docs/OVERVIEW.md`
+- Installation: `docs/INSTALLATION.md`
+- Usage: `docs/USAGE.md`
+- Customization: `docs/CUSTOMIZATION.md`
+- Accessibility: `docs/ACCESSIBILITY.md`
+- Troubleshooting: `docs/TROUBLESHOOTING.md`
+- FAQ: `docs/FAQ.md`
+- Support: `docs/SUPPORT.md`
+- Privacy: `docs/PRIVACY.md`
+- Release guide: `docs/RELEASE.md`
+- Publish reset guide: `docs/PUBLISH_RESET.md`
+- Metadata checklist: `docs/SEO_METADATA.md`
+- Dark architecture: `docs/THEME_DARK_GUIDE.md`
+- Placeholder map: `docs/IMAGE_REPLACEMENT_MAP.md`
+
+## Placeholder Assets
+
+All planned visuals are present as named placeholders:
+
+- Directory: `media/placeholders/`
+- Replacement map: `docs/IMAGE_REPLACEMENT_MAP.md`
+
+![Marketplace Placeholder](media/placeholders/marketplace-banner-placeholder.png)
+
+## Installation
+
+### Marketplace install
+
+1. Open Extensions in VS Code.
+2. Search `AristoByte Color Theme`.
+3. Install and activate the preferred theme.
+
+### Manual install
+
+1. Download a release `.vsix`.
+2. Run `Extensions: Install from VSIX...`.
 3. Reload VS Code.
 
----
+## Local Development
 
-## 🔍 Usage Tips
+```bash
+npm install
+npm run package
+npm run install:local
+```
 
-- Use **`Ctrl+K Ctrl+T` / `Cmd+K Cmd+T`** to quickly switch themes.
-- Open **Developer: Inspect Editor Tokens and Scopes** to see how each element is highlighted.
-- Designed for **long coding sessions**, **full-stack development**, **scripting**, and **devops terminals**.
+## Release
 
----
+Release is automated from `master`:
 
-## 📖 Learn More
+- `scripts/detect-bump.sh` (bump type detection from last commit)
+- `scripts/bump.sh` (version + changelog update)
+- `scripts/build.sh` (VSIX packaging)
+- `scripts/publish.sh` (Marketplace + Open VSX publish)
+- VS Code Marketplace publish
+- Open VSX publish
+- GitHub Release creation
 
-- [VS Code Color Themes](https://code.visualstudio.com/docs/getstarted/themes)
-- [VS Code Customization](https://code.visualstudio.com/docs/getstarted/keybindings)
+Required repository secrets:
 
----
+- `VSCE_PAT`
+- `OVSX_PAT`
 
-## 💡 About AristoByte
+## Support
 
-AristoByte is dedicated to delivering **modern, scalable, and beautiful tech solutions**.  
-With AristoByte Theme, we bring the same **innovation and precision** to your coding environment.
+- Issues: <https://github.com/aristobyte/aristo-theme-vscode-extension/issues>
+- Discussions: <https://github.com/aristobyte/aristo-theme-vscode-extension/discussions>
 
----
+## License
 
-## 📜 License
-
-MIT License © 2025 AristoByte
+MIT License © 2026 AristoByte

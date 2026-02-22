@@ -1,27 +1,29 @@
 ---
-name: Feature Request
-about: Suggest a new feature or enhancement for AristoByte Theme packages
+name: Theme Feature Request
+about: Suggest a new theme improvement or user-facing enhancement
 title: "[FEATURE] "
 labels: enhancement
 assignees: ""
 ---
 
-## Describe the Feature
+## Feature request
 
-A clear and concise description of the feature or enhancement you’d like to see.
+Describe the feature idea.
 
-## Motivation
+## User value
 
-Explain why this feature is needed and the problem it solves.
+How does it improve readability, accessibility, or workflow?
 
-## Proposed Implementation
+## Scope
 
-Optional: Suggest how this feature could be implemented, including any API or UI considerations.
+- [ ] Theme colors/tokens
+- [ ] Documentation/dashboard
+- [ ] Release/distribution
 
-## Alternatives Considered
+## Alternatives considered
 
-Optional: List alternative solutions or approaches you’ve considered.
+List alternatives you evaluated.
 
-## Additional Context
+## Mockups or references
 
-Add any other context, screenshots, or examples to help illustrate your request.
+Add screenshots, color references, or examples.

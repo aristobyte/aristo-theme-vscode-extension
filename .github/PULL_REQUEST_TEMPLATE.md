@@ -1,26 +1,27 @@
-# Pull Request Template
+# Pull Request
 
-## Description
+## Summary
 
-Please include a summary of the change and which issue is fixed. Also include relevant motivation and context.
+Describe what changed and why.
 
-Fixes # (issue)
+## Change Type
 
-## Type of Change
-
-- [ ] Bug fix
-- [ ] New feature
-- [ ] Breaking change
+- [ ] Theme color/token update
 - [ ] Documentation update
-- [ ] Refactor
+- [ ] Release/process update
+- [ ] Bug fix
 
-## Checklist
+## Validation
 
-- [ ] My code follows the style guidelines of this project
-- [ ] I have performed a self-review of my own code
-- [ ] I have commented my code, particularly in hard-to-understand areas
-- [ ] I have made corresponding changes to the documentation
-- [ ] My changes generate no new warnings
-- [ ] Any dependent changes have been merged and published in downstream modules
+- [ ] I packaged the extension locally (`npm run package`) or verified metadata changes.
+- [ ] I tested theme selection in VS Code (`AristoByte Dark` / `AristoByte Light`).
+- [ ] I added or updated docs in `docs/` when needed.
+- [ ] I attached screenshots for visual changes.
 
-## Screenshots / GIFs (if applicable)
+## Screenshots
+
+Attach before/after screenshots when UI or token colors changed.
+
+## Related issue
+
+Closes #

@@ -1,123 +1,66 @@
-# Contributing to AristoByte Theme
+# Contributing to AristoByte Color Theme
 
-Welcome! 👋 Thank you for considering contributing to **AristoByte Theme**. Whether you’re reporting bugs, suggesting new features, improving documentation, or submitting code, your contributions help make this UI ecosystem stronger and more accessible.
+Thanks for contributing.
 
----
+## Project scope
 
-## Table of Contents
+This repository is a VS Code color theme extension. Contributions typically involve:
 
-1. [How to Contribute](#how-to-contribute)
-2. [Reporting Issues](#reporting-issues)
-3. [Code Contributions](#code-contributions)
-4. [Style & Guidelines](#style--guidelines)
-5. [Branching & Workflow](#branching--workflow)
-6. [Pull Request Process](#pull-request-process)
-7. [Code of Conduct](#code-of-conduct)
+- Theme token and UI color improvements
+- Documentation updates
+- Release/version updates
 
----
+## Prerequisites
 
-## How to Contribute
+- Node.js 20+
+- npm 10+
+- VS Code 1.105+
 
-There are multiple ways to contribute to AristoByte Theme:
+## Local workflow
 
-- **Bug Reports:** Help us identify problems in our components or packages.
-- **Feature Requests:** Suggest new features or improvements to existing functionality.
-- **Documentation:** Improve guides, examples, and READMEs.
-- **Code Contributions:** Add new components, enhance existing ones, or fix issues.
-
-We welcome contributions of all sizes, from small documentation fixes to major component updates.
-
----
-
-## Reporting Issues
-
-When opening an issue, please include:
-
-- A descriptive title
-- Clear description of the problem or feature request
-- Steps to reproduce (for bugs)
-- Expected vs. actual behavior
-- Screenshots or code snippets (if applicable)
-
-Use the appropriate labels if available (bug, enhancement, documentation, etc.) to help maintainers triage efficiently.
-
----
-
-## Code Contributions
-
-### Prerequisites
-
-- Node.js >= 20.17.0
-- Yarn >= 1.22 or NPM >= 10.8
-- Familiarity with React, TypeScript, and SCSS modules
-
-### Steps to Contribute
-
-1. **Fork the Repository** and clone it locally.
-2. **Install dependencies:**
+1. Install dependencies:
 
 ```bash
-yarn install
+npm install
 ```
 
-3. Run the development environment:
+2. Package the extension:
 
 ```bash
-yarn dev
+npm run package
 ```
 
-4. Make your changes in a new branch with a descriptive name.
-
-5. Test your changes in all supported browsers and screen sizes.
-
-6. Add or update documentation if applicable.
-
-### Style & Guidelines
-
-To maintain a consistent codebase across packages:
-
-- **TypeScript**: Fully typed APIs, strict mode enabled.
-- **SCSS**: Alphabetically ordered, modular, scoped per component.
-- **Naming Conventions**: `PascalCase` for components, `camelCase` for props and functions.
-- **Linting & Formatting**: ESLint and Prettier are enforced. Run:
+3. Install the generated `.vsix` into VS Code:
 
 ```bash
-yarn lint
-yarn format
+npm run install:local
 ```
 
-- **Commit Messages**: Use conventional commits for clarity (feat, fix, docs, style, refactor, test, chore).
+4. Verify in VS Code:
 
----
+- Open Command Palette
+- Run `Preferences: Color Theme`
+- Select `AristoByte Dark` or `AristoByte Light`
 
-## Branching & Workflow
+## Branching and pull requests
 
-- **Main Branch:** `main` (stable production-ready code)
-- **Development Branches:** `feature/<feature-name>` or `bugfix/<issue-name>`
-- **Pull Requests:** Target `main` or a feature branch as specified
+- Create branches from `master`.
+- Use clear branch names like `theme/token-contrast` or `docs/readme-update`.
+- Open PRs against `master`.
+- Add before/after screenshots for visual changes.
 
-All PRs should pass tests and CI checks before being merged.
+## Release process
 
----
+Releases are automated via GitHub Actions and run only from `master`.
 
-## Pull Request Process
+1. Bump version in `package.json` (for example `npm run release:patch`).
+2. Update `CHANGELOG.md`.
+3. Merge into `master`.
+4. The `Release` workflow publishes to:
+   - VS Code Marketplace (requires `VSCE_PAT` secret)
+   - Open VSX (requires `OVSX_PAT` secret)
+   - GitHub Releases (tag: `v<version>`)
 
-1. **Create a descriptive PR title and description**
-2. **Link relevant issues** (if any)
-3. **Ensure tests pass** and code is formatted
-4. **Add screenshots** for visual changes (if applicable)
-5. **Wait for maintainers review**
-6. **Address review comments** promptly
+## Code of conduct
 
-After approval, a maintainer will merge your PR.
-
----
-
-## Code of Conduct
-
-All contributors are expected to follow the **[Code of Conduct](./CODE_OF_CONDUCT.md)**.  
-Harassment, discrimination, or inappropriate behavior will not be tolerated.
-
----
-
-Thank you for helping make **AristoByte Theme** a robust, reliable, and enjoyable UI ecosystem! 🚀
+See `.github/CODE_OF_CONDUCT.md`.

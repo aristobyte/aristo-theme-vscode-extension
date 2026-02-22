@@ -1,0 +1,27 @@
+{
+  "brand": {
+    "yellow": "#FFEE27",
+    "gold": "#FEC800",
+    "orange": "#F18E35",
+    "deepOrange": "#E95F32",
+    "red": "#E2312D"
+  },
+  "dark": {
+    "bgPrimary": "#12182B",
+    "bgSecondary": "#0D1428",
+    "bgTertiary": "#10182D",
+    "bgElevated": "#1A2440",
+    "fgPrimary": "#E8ECF7",
+    "fgMuted": "#A8B2D1",
+    "fgSubtle": "#6F7A9D"
+  },
+  "usage": {
+    "interactivePrimary": "#FEC800",
+    "interactiveHover": "#FFDA3A",
+    "focusRing": "#FEC800",
+    "success": "#7BC580",
+    "warning": "#FEC800",
+    "error": "#E2312D",
+    "info": "#82AAFF"
+  }
+}

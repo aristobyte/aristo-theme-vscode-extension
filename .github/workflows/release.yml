@@ -1,0 +1,127 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+    inputs:
+      bump_type:
+        description: "Optional bump override (patch, minor, major)"
+        required: false
+        type: choice
+        options:
+          - ""
+          - patch
+          - minor
+          - major
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Bump, Build, Publish
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'chore(release):') }}
+
+    steps:
+      - name: Create GitHub App token
+        id: app_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.ARISTO_BOT_ID }}
+          installation-id: ${{ secrets.ARISTO_BOT_INSTALLATION_ID }}
+          private-key: ${{ secrets.ARISTO_BOT_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ steps.app_token.outputs.token }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Verify publish secrets
+        run: |
+          if [ -z "${{ secrets.VSCE_PAT }}" ]; then
+            echo "Missing VSCE_PAT repository secret" >&2
+            exit 1
+          fi
+          if [ -z "${{ secrets.OVSX_PAT }}" ]; then
+            echo "Missing OVSX_PAT repository secret" >&2
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Detect bump type
+        id: bump_detect
+        run: |
+          if [ -n "${{ inputs.bump_type }}" ]; then
+            BUMP_TYPE="${{ inputs.bump_type }}"
+          else
+            BUMP_TYPE="$(scripts/detect-bump.sh)"
+          fi
+
+          echo "bump_type=${BUMP_TYPE}" >> "$GITHUB_OUTPUT"
+          echo "Detected bump type: ${BUMP_TYPE}"
+
+      - name: Bump version and changelog
+        id: bump
+        run: |
+          scripts/bump.sh "${{ steps.bump_detect.outputs.bump_type }}"
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "version=${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+          echo "tag=v${NEW_VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Commit release changes
+        run: |
+          git config user.name "aristo-bot[bot]"
+          git config user.email "aristo-bot[bot]@users.noreply.github.com"
+
+          git add package.json CHANGELOG.md
+          if [ -f package-lock.json ]; then
+            git add package-lock.json
+          fi
+
+          git commit -m "chore(release): v${{ steps.bump.outputs.version }} [skip ci]"
+
+      - name: Create tag
+        run: |
+          git tag "${{ steps.bump.outputs.tag }}"
+
+      - name: Push commit and tag
+        env:
+          GH_APP_TOKEN: ${{ steps.app_token.outputs.token }}
+        run: |
+          git remote set-url origin "https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git"
+          git push origin HEAD:master
+          git push origin "${{ steps.bump.outputs.tag }}"
+
+      - name: Build extension
+        run: scripts/build.sh
+
+      - name: Publish extension
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: scripts/publish.sh
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token }}
+        run: |
+          gh release create "${{ steps.bump.outputs.tag }}" \
+            --repo "${{ github.repository }}" \
+            --title "${{ steps.bump.outputs.tag }}" \
+            --generate-notes \
+            *.vsix

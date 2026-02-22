@@ -2,23 +2,63 @@
   "name": "aristobyte-vscode-color-theme",
   "displayName": "AristoByte Color Theme",
   "description": "A modern, sleek VS Code theme designed for developers who value clarity and productivity. AristoByte Theme combines a tech-forward color palette with high-contrast syntax highlighting, optimized for long coding sessions and deep focus.",
-  "version": "1.0.4",
+  "version": "1.2.0",
   "publisher": "aristobyte",
+  "homepage": "https://github.com/aristobyte/aristo-theme-vscode-extension#readme",
+  "preview": false,
+  "qna": "https://github.com/aristobyte/aristo-theme-vscode-extension/discussions",
+  "sponsor": {
+    "url": "https://github.com/sponsors/aristobyte-team"
+  },
   "engines": {
-    "vscode": "^1.105.0"
+    "vscode": ">=1.90.0"
+  },
+  "galleryBanner": {
+    "color": "#0E1220",
+    "theme": "dark"
   },
   "categories": [
     "Themes"
   ],
+  "files": [
+    "themes/*.json",
+    "docs/**",
+    "media/**",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "icon.png",
+    "extension.js"
+  ],
   "scripts": {
-    "dev": "code --install-extension aristobyte-vscode-color-theme-1.0.0.vsix"
+    "package": "@vscode/vsce package --no-yarn",
+    "package:pre": "@vscode/vsce package --no-yarn --pre-release",
+    "install:local": "code --install-extension $(ls -t *.vsix | head -n 1) --force",
+    "dev": "npm run package && npm run install:local",
+    "publish:marketplace": "@vscode/vsce publish --no-yarn",
+    "publish:ovsx": "ovsx publish",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major",
+    "clean:vsix": "rm -f *.vsix",
+    "uninstall:local": "code --uninstall-extension aristobyte.aristobyte-vscode-color-theme",
+    "reinstall:local": "npm run uninstall:local || true && npm run dev",
+    "publish:marketplace:token": "@vscode/vsce publish --no-yarn -p \"$VSCE_PAT\"",
+    "publish:ovsx:token": "ovsx publish -p \"$OVSX_PAT\"",
+    "bump:detect": "scripts/detect-bump.sh",
+    "bump:auto": "scripts/bump.sh",
+    "bump:patch": "scripts/bump.sh patch",
+    "bump:minor": "scripts/bump.sh minor",
+    "bump:major": "scripts/bump.sh major",
+    "build:release": "scripts/build.sh",
+    "publish:release": "scripts/publish.sh"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aristobyte-team/aristobyte-vscode-color-theme"
+    "url": "https://github.com/aristobyte/aristo-theme-vscode-extension"
   },
   "bugs": {
-    "url": "https://github.com/aristobyte-team/aristobyte-vscode-color-theme/issues"
+    "url": "https://github.com/aristobyte/aristo-theme-vscode-extension/issues"
   },
   "icon": "icon.png",
   "keywords": [
@@ -29,16 +69,164 @@
     "vscode",
     "developer",
     "modern",
-    "programming"
+    "programming",
+    "color-theme",
+    "syntax-highlighting",
+    "accessibility",
+    "productivity",
+    "high-contrast",
+    "developer-experience",
+    "editor-theme",
+    "ui-theme"
   ],
   "license": "MIT",
+  "devDependencies": {
+    "@vscode/vsce": "^3.6.2",
+    "ovsx": "^0.10.3"
+  },
   "contributes": {
     "themes": [
       {
         "label": "AristoByte Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/aristobyte-dark-color-theme.json"
+      },
+      {
+        "label": "AristoByte Light",
+        "uiTheme": "vs",
+        "path": "./themes/aristobyte-light-color-theme.json"
       }
-    ]
+    ],
+    "walkthroughs": [
+      {
+        "id": "aristobyte.getting-started",
+        "title": "AristoByte Dashboard",
+        "description": "A complete in-editor onboarding hub for installing, using, customizing, and troubleshooting AristoByte.",
+        "steps": [
+          {
+            "id": "aristobyte.overview",
+            "title": "Overview Tab",
+            "description": "Start with the overview in [`docs/OVERVIEW.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/OVERVIEW.md).",
+            "media": {
+              "image": "media/placeholders/dashboard-tab-overview.png",
+              "altText": "AristoByte dashboard overview tab placeholder"
+            }
+          },
+          {
+            "id": "aristobyte.installation",
+            "title": "Installation Tab",
+            "description": "Follow install options in [`docs/INSTALLATION.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/INSTALLATION.md).",
+            "media": {
+              "image": "media/placeholders/dashboard-tab-installation.png",
+              "altText": "AristoByte dashboard installation tab placeholder"
+            }
+          },
+          {
+            "id": "aristobyte.customization",
+            "title": "Customization Tab",
+            "description": "Tune your editor with [`docs/CUSTOMIZATION.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/CUSTOMIZATION.md).",
+            "media": {
+              "image": "media/placeholders/dashboard-tab-customization.png",
+              "altText": "AristoByte dashboard customization tab placeholder"
+            }
+          },
+          {
+            "id": "aristobyte.accessibility",
+            "title": "Accessibility Tab",
+            "description": "Read accessibility guidance in [`docs/ACCESSIBILITY.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/ACCESSIBILITY.md).",
+            "media": {
+              "image": "media/placeholders/dashboard-tab-accessibility.png",
+              "altText": "AristoByte dashboard accessibility tab placeholder"
+            }
+          },
+          {
+            "id": "aristobyte.troubleshooting",
+            "title": "Troubleshooting Tab",
+            "description": "Fix common issues using [`docs/TROUBLESHOOTING.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/TROUBLESHOOTING.md).",
+            "media": {
+              "image": "media/placeholders/dashboard-tab-troubleshooting.png",
+              "altText": "AristoByte dashboard troubleshooting tab placeholder"
+            }
+          }
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "aristobyteTheme.openDashboard",
+        "title": "AristoByte: Open Getting Started Dashboard",
+        "category": "AristoByte"
+      },
+      {
+        "command": "aristobyteTheme.openDocsIndex",
+        "title": "AristoByte: Open Documentation Index",
+        "category": "AristoByte"
+      },
+      {
+        "command": "aristobyteTheme.openMarketplacePage",
+        "title": "AristoByte: Open Marketplace/Homepage",
+        "category": "AristoByte"
+      },
+      {
+        "command": "aristobyteTheme.applyDarkTheme",
+        "title": "AristoByte: Apply Dark Theme",
+        "category": "AristoByte"
+      },
+      {
+        "command": "aristobyteTheme.applyLightTheme",
+        "title": "AristoByte: Apply Light Theme",
+        "category": "AristoByte"
+      }
+    ],
+    "configuration": {
+      "title": "AristoByte Theme",
+      "properties": {
+        "aristobyteTheme.showWalkthroughOnInstallOrUpdate": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open the AristoByte Getting Started dashboard after install/update."
+        },
+        "aristobyteTheme.defaultThemeOnInstall": {
+          "type": "string",
+          "enum": [
+            "auto",
+            "dark",
+            "light"
+          ],
+          "default": "auto",
+          "markdownDescription": "Default theme to apply on first install. `auto` keeps your current theme unchanged."
+        },
+        "aristobyteTheme.openDocsInEditor": {
+          "type": "boolean",
+          "default": true,
+          "description": "Open AristoByte docs inside VS Code editor tabs when available."
+        }
+      }
+    }
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:aristobyteTheme.openDashboard",
+    "onCommand:aristobyteTheme.openDocsIndex",
+    "onCommand:aristobyteTheme.openMarketplacePage",
+    "onCommand:aristobyteTheme.applyDarkTheme",
+    "onCommand:aristobyteTheme.applyLightTheme"
+  ],
+  "markdown": "github",
+  "extensionKind": [
+    "ui"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "author": {
+    "name": "AristoByte Team",
+    "url": "https://github.com/aristobyte"
   }
 }

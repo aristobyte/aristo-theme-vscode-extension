@@ -1,34 +1,18 @@
-# Security Policy for AristoByte Theme
+# Security Policy
 
-## Supported Versions
+## Supported versions
 
-| Package         | Supported Version(s)       |
-| --------------- | -------------------------- |
-| All UI Packages | All active versions on npm |
+Security updates are provided for the latest published version of this VS Code extension.
 
-AristoByte Theme maintains security updates for all actively supported packages. Outdated versions may not receive fixes.
+## Reporting a vulnerability
 
-## Reporting a Vulnerability
+Do not open a public GitHub issue for security reports.
 
-If you discover a security vulnerability in any AristoByte Theme package, please report it responsibly:
+Report vulnerabilities by emailing `security@aristobyte.com` with:
 
-- **Do not** create a public issue.
-- Send an email to **security@aristobyte.com** with:
-  - Package name and version
-  - Description of the vulnerability
-  - Steps to reproduce (if applicable)
-  - Any suggested fixes or mitigations
+- Extension name and version
+- Vulnerability description
+- Reproduction steps
+- Suggested mitigation (optional)
 
-We will acknowledge your report within 48 hours and work to provide a fix or guidance.
-
-## Security Updates
-
-Once a security vulnerability is confirmed, AristoByte Theme will:
-
-1. Create a patched release of the affected package.
-2. Publish a security advisory on GitHub and npm.
-3. Communicate directly with the reporter if needed.
-
-## Responsible Disclosure
-
-By reporting a vulnerability responsibly, you help us maintain a safe ecosystem. AristoByte Theme values and credits contributors who help improve the security of our software.
+We will acknowledge reports as quickly as possible and follow responsible disclosure practices.

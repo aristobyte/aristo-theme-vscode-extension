@@ -1,41 +1,41 @@
 ---
-name: Bug Report
-about: Report a bug or unexpected behavior in AristoByte Theme packages
+name: Theme Bug Report
+about: Report a bug in the VS Code theme behavior or visuals
 title: "[BUG] "
 labels: bug
 assignees: ""
 ---
 
-## Describe the Bug
+## Problem summary
 
-A clear and concise description of what the bug is.
+Describe the issue clearly.
 
-## To Reproduce
+## Reproduction steps
 
-Steps to reproduce the behavior:
+1. 
+2. 
+3. 
 
-1. Go to '...'
-2. Click on '...'
-3. Scroll to '...'
-4. See error
+## Expected result
 
-## Expected Behavior
+What should happen?
 
-Describe what you expected to happen.
+## Actual result
 
-## Screenshots
-
-If applicable, add screenshots to help explain your problem.
+What happened instead?
 
 ## Environment
 
-- AristoByte Theme Package: [e.g., button, dropdown]
-- Version: [e.g., 1.0.0]
-- OS: [e.g., macOS, Windows]
-- Browser: [e.g., Chrome, Safari, Firefox]
-- Node.js Version: [e.g., 20.17.0]
-- Package Manager: [e.g., npm, yarn, pnpm]
+- Extension version:
+- VS Code version:
+- OS:
+- Theme variant (`AristoByte Dark` or `AristoByte Light`):
+- Language/file type where issue appears:
 
-## Additional Context
+## Screenshots
 
-Add any other context about the problem here.
+Add screenshots if possible.
+
+## Additional context
+
+Include relevant settings from `settings.json` such as `workbench.colorCustomizations` or `editor.tokenColorCustomizations`.
