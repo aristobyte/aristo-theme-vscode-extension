@@ -93,6 +93,9 @@ jobs:
 
           git commit -m "chore(release): v${{ steps.bump.outputs.version }} [skip ci]"
 
+      - name: Build extension
+        run: scripts/build.sh
+
       - name: Push release commit
         env:
           GH_APP_TOKEN: ${{ steps.app_token.outputs.token }}
@@ -100,57 +103,41 @@ jobs:
           git remote set-url origin "https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git"
           git push origin HEAD:master
 
-      - name: Create and push tag
-        env:
-          GH_APP_TOKEN: ${{ steps.app_token.outputs.token }}
-          GH_TOKEN: ${{ steps.app_token.outputs.token }}
-        run: |
-          TAG="${{ steps.bump.outputs.tag }}"
-          SHA="$(git rev-parse HEAD)"
-          git remote set-url origin "https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git"
-          if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q "${TAG}$"; then
-            echo "Tag ${TAG} already exists."
-          else
-            git tag "${TAG}"
-            if git push origin "${TAG}"; then
-              echo "Created and pushed ${TAG} via git push"
-            else
-              echo "git push tag blocked by ruleset, attempting GitHub API fallback..."
-              if gh api "repos/${{ github.repository }}/git/ref/tags/${TAG}" >/dev/null 2>&1; then
-                echo "Tag ${TAG} already exists after failed push."
-              else
-                gh api --method POST "repos/${{ github.repository }}/git/refs" \
-                  -f ref="refs/tags/${TAG}" \
-                  -f sha="${SHA}"
-                echo "Created ${TAG} via GitHub API"
-              fi
-            fi
-          fi
+      # - name: Create and push tag
+      #   env:
+      #     GH_APP_TOKEN: ${{ steps.app_token.outputs.token }}
+      #   run: |
+      #     TAG="${{ steps.bump.outputs.tag }}"
+      #     git remote set-url origin "https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git"
+      #     if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q "${TAG}$"; then
+      #       echo "Tag ${TAG} already exists."
+      #     else
+      #       git tag "${TAG}"
+      #       git push origin "${TAG}"
+      #       echo "Created and pushed ${TAG}"
+      #     fi
 
-      - name: Build extension
-        run: scripts/build.sh
+      # - name: Create GitHub release from tag (with template notes)
+      #   env:
+      #     GH_TOKEN: ${{ steps.app_token.outputs.token }}
+      #     GITHUB_REPOSITORY: ${{ github.repository }}
+      #   run: |
+      #     TAG="${{ steps.bump.outputs.tag }}"
+      #     VERSION="${{ steps.bump.outputs.version }}"
+      #     PUBLISHER="$(node -p "require('./package.json').publisher")"
+      #     NAME="$(node -p "require('./package.json').name")"
+      #     EXTENSION_ID="${PUBLISHER}.${NAME}"
+      #     NOTES="$(sed "s/\\$VERSION/${VERSION}/g; s/\\$TAG/${TAG}/g; s/\\$EXTENSION_ID/${EXTENSION_ID}/g; s/\\$PUBLISHER/${PUBLISHER}/g; s/\\$NAME/${NAME}/g" .github/RELEASE_NOTE.md)"
 
-      - name: Create GitHub release from tag (with template notes)
-        env:
-          GH_TOKEN: ${{ steps.app_token.outputs.token }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: |
-          TAG="${{ steps.bump.outputs.tag }}"
-          VERSION="${{ steps.bump.outputs.version }}"
-          PUBLISHER="$(node -p "require('./package.json').publisher")"
-          NAME="$(node -p "require('./package.json').name")"
-          EXTENSION_ID="${PUBLISHER}.${NAME}"
-          NOTES="$(sed "s/\\$VERSION/${VERSION}/g; s/\\$TAG/${TAG}/g; s/\\$EXTENSION_ID/${EXTENSION_ID}/g; s/\\$PUBLISHER/${PUBLISHER}/g; s/\\$NAME/${NAME}/g" .github/RELEASE_NOTE.md)"
-
-          if gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
-            echo "Release ${TAG} already exists. Skipping creation."
-          else
-            gh release create "${TAG}" \
-              --repo "${GITHUB_REPOSITORY}" \
-              --title "AristoByte Theme ${TAG}" \
-              --notes "${NOTES}" \
-              *.vsix
-          fi
+      #     if gh release view "${TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+      #       echo "Release ${TAG} already exists. Skipping creation."
+      #     else
+      #       gh release create "${TAG}" \
+      #         --repo "${GITHUB_REPOSITORY}" \
+      #         --title "AristoByte Theme ${TAG}" \
+      #         --notes "${NOTES}" \
+      #         *.vsix
+      #     fi
 
       - name: Publish extension
         env:
