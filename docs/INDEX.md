@@ -19,4 +19,4 @@
 - `docs/RELEASE.md`
 - `docs/PUBLISH_RESET.md`
 - `docs/SEO_METADATA.md`
-- `docs/IMAGE_REPLACEMENT_MAP.md`
+- `DEVELOPMENT.md` (repository root)

@@ -23,8 +23,36 @@ log_info "Last commit: \"${LAST_COMMIT_MSG}\""
 log_info "Selected bump type: ${BUMP_TYPE}"
 
 CURRENT_VERSION=$(node -p "require('./package.json').version")
-npm version "$BUMP_TYPE" --no-git-tag-version >/dev/null
-NEW_VERSION=$(node -p "require('./package.json').version")
+NEW_VERSION=$(node - <<'NODE' "$CURRENT_VERSION" "$BUMP_TYPE"
+const current = process.argv[2];
+const type = process.argv[3];
+const m = current.match(/^(\d+)\.(\d+)\.(\d+)$/);
+if (!m) {
+  throw new Error(`Unsupported semver format: ${current}`);
+}
+let [major, minor, patch] = m.slice(1).map(Number);
+if (type === 'major') {
+  major += 1;
+  minor = 0;
+  patch = 0;
+} else if (type === 'minor') {
+  minor += 1;
+  patch = 0;
+} else {
+  patch += 1;
+}
+process.stdout.write(`${major}.${minor}.${patch}`);
+NODE
+)
+
+node - <<'NODE' "$NEW_VERSION"
+const fs = require('fs');
+const version = process.argv[2];
+const p = 'package.json';
+const pkg = JSON.parse(fs.readFileSync(p, 'utf8'));
+pkg.version = version;
+fs.writeFileSync(p, JSON.stringify(pkg, null, 2) + '\n');
+NODE
 TODAY=$(date +%F)
 
 log_info "Version: ${CURRENT_VERSION} -> ${NEW_VERSION}"

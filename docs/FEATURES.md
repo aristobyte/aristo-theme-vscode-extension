@@ -23,6 +23,7 @@ AristoByte includes a walkthrough-based dashboard for:
 
 ## Commands
 
+- `AristoByte: Open Home`
 - `AristoByte: Open Getting Started Dashboard`
 - `AristoByte: Open Documentation Index`
 - `AristoByte: Open Marketplace/Homepage`
@@ -31,6 +32,7 @@ AristoByte includes a walkthrough-based dashboard for:
 
 ## Settings
 
+- `aristobyteTheme.postInstallExperience`
 - `aristobyteTheme.showWalkthroughOnInstallOrUpdate`
 - `aristobyteTheme.defaultThemeOnInstall`
 - `aristobyteTheme.openDocsInEditor`

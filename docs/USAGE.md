@@ -31,4 +31,4 @@ Validate the theme on:
 - JSON / YAML / TOML
 - Markdown
 
-![Usage Placeholder](../media/placeholders/usage-code-editor-placeholder.png)
+![Code Editor Usage](../media/assets/usage-code-editor.png)

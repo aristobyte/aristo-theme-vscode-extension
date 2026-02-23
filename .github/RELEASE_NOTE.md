@@ -1,9 +1,9 @@
-## AristoByte Theme Release $TAG
+## AristoByte Theme Release v1.0.0
 
 ### Package
 
-- Extension ID: `$EXTENSION_ID`
-- Version: `$VERSION`
+- Extension ID: `aristobyte.aristo-theme-vscode-color-theme`
+- Version: `1.0.0`
 
 ### Highlights
 
@@ -13,8 +13,8 @@
 
 ### Install
 
-- VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=$EXTENSION_ID
-- Open VSX: https://open-vsx.org/extension/$PUBLISHER/$NAME
+- VS Code Marketplace: https://marketplace.visualstudio.com/items?itemName=aristobyte.aristo-theme-vscode-color-theme
+- Open VSX: https://open-vsx.org/extension/aristobyte/aristo-theme-vscode-color-theme
 
 ### Resources
 

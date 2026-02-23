@@ -8,7 +8,7 @@ All notable changes to this project are documented in this file.
 
 - In-extension walkthrough dashboard with tab-style onboarding sections.
 - Full end-user documentation set in `docs/` (installation, usage, customization, accessibility, troubleshooting, FAQ, support, privacy).
-- Placeholder image system in `media/placeholders/` with replacement mapping.
+- Final visual asset system under `media/assets/`.
 - Marketplace metadata checklist and release documentation.
 - Publish reset guide for removing old extension versions and restarting with a new identity.
 - Lightweight runtime layer (`extension.js`) with AristoByte dashboard/docs/apply-theme commands.

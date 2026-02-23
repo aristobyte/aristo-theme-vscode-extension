@@ -15,6 +15,7 @@ AristoByte ships with:
 
 - Supported VS Code version: `>=1.90.0`
 - Optimized for latest stable VS Code while remaining compatible with older supported builds
+- AristoByte reference: <https://aristobyte.com>
 
 ## Themes
 
@@ -42,10 +43,12 @@ AristoByte includes a native walkthrough dashboard (inside the extension view) w
 
 You can open it via command palette:
 
+- `AristoByte: Open Home`
 - `AristoByte: Open Getting Started Dashboard`
 
 ## Commands
 
+- `AristoByte: Open Home`
 - `AristoByte: Open Getting Started Dashboard`
 - `AristoByte: Open Documentation Index`
 - `AristoByte: Open Marketplace/Homepage`
@@ -54,6 +57,7 @@ You can open it via command palette:
 
 ## Settings
 
+- `aristobyteTheme.postInstallExperience`
 - `aristobyteTheme.showWalkthroughOnInstallOrUpdate`
 - `aristobyteTheme.defaultThemeOnInstall`
 - `aristobyteTheme.openDocsInEditor`
@@ -75,16 +79,12 @@ You can open it via command palette:
 - Publish reset guide: `docs/PUBLISH_RESET.md`
 - Metadata checklist: `docs/SEO_METADATA.md`
 - Dark architecture: `docs/THEME_DARK_GUIDE.md`
-- Placeholder map: `docs/IMAGE_REPLACEMENT_MAP.md`
 
-## Placeholder Assets
+## Visual Assets
 
-All planned visuals are present as named placeholders:
+- Directory: `media/assets/`
 
-- Directory: `media/placeholders/`
-- Replacement map: `docs/IMAGE_REPLACEMENT_MAP.md`
-
-![Marketplace Placeholder](media/placeholders/marketplace-banner-placeholder.png)
+![Marketplace Banner](media/assets/marketplace-banner.png)
 
 ## Installation
 
@@ -99,14 +99,6 @@ All planned visuals are present as named placeholders:
 1. Download a release `.vsix`.
 2. Run `Extensions: Install from VSIX...`.
 3. Reload VS Code.
-
-## Local Development
-
-```bash
-npm install
-npm run package
-npm run install:local
-```
 
 ## Release
 
@@ -125,10 +117,15 @@ Required repository secrets:
 - `VSCE_PAT`
 - `OVSX_PAT`
 
+## For Developers
+
+Developer onboarding, local run flow, and all package commands are documented in `DEVELOPMENT.md`.
+
 ## Support
 
 - Issues: <https://github.com/aristobyte/aristo-theme-vscode-extension/issues>
 - Discussions: <https://github.com/aristobyte/aristo-theme-vscode-extension/discussions>
+- Website: <https://aristobyte.com>
 
 ## License
 

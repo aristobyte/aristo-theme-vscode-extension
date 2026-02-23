@@ -54,7 +54,7 @@ npx ovsx unpublish aristobyte.aristo-theme-vscode-color-theme
 ## 5) Publish the new extension identity
 
 ```bash
-npm run package
+yarn package
 npx @vscode/vsce publish -p "$VSCE_PAT"
 npx ovsx publish -p "$OVSX_PAT"
 ```

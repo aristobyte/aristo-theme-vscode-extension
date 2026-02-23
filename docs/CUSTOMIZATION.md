@@ -36,4 +36,4 @@ AristoByte is optimized as a complete editor look, but you can layer user settin
 - Use VS Code Settings Sync.
 - Pin the extension version in managed environments when needed.
 
-![Customization Placeholder](../media/placeholders/customization-settings-placeholder.png)
+![Customization Settings](../media/assets/customization-settings.png)

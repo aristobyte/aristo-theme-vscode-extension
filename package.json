@@ -4,7 +4,11 @@
   "description": "A modern, sleek VS Code theme designed for developers who value clarity and productivity. AristoByte Theme combines a tech-forward color palette with high-contrast syntax highlighting, optimized for long coding sessions and deep focus.",
   "version": "1.0.0",
   "publisher": "aristobyte",
-  "homepage": "https://github.com/aristobyte/aristo-theme-vscode-extension#readme",
+  "author": {
+    "name": "AristoByte Team",
+    "url": "https://aristobyte.com"
+  },
+  "homepage": "https://aristobyte.com",
   "preview": false,
   "qna": "https://github.com/aristobyte/aristo-theme-vscode-extension/discussions",
   "sponsor": {
@@ -46,15 +50,15 @@
     "package": "@vscode/vsce package",
     "package:pre": "@vscode/vsce package --pre-release",
     "install:local": "code --install-extension $(ls -t *.vsix | head -n 1) --force",
-    "dev": "npm run package && npm run install:local",
+    "dev": "yarn package && yarn install:local",
     "publish:marketplace": "@vscode/vsce publish",
     "publish:ovsx": "ovsx publish",
-    "release:patch": "npm version patch",
-    "release:minor": "npm version minor",
-    "release:major": "npm version major",
+    "release:patch": "yarn bump:patch",
+    "release:minor": "yarn bump:minor",
+    "release:major": "yarn bump:major",
     "clean:vsix": "rm -f *.vsix",
     "uninstall:local": "code --uninstall-extension aristobyte.aristo-theme-vscode-color-theme",
-    "reinstall:local": "npm run uninstall:local || true && npm run dev",
+    "reinstall:local": "yarn uninstall:local || true && yarn dev",
     "publish:marketplace:token": "@vscode/vsce publish -p \"$VSCE_PAT\"",
     "publish:ovsx:token": "ovsx publish -p \"$OVSX_PAT\"",
     "bump:detect": "scripts/detect-bump.sh",
@@ -130,8 +134,8 @@
             "title": "Overview Tab",
             "description": "Start with the overview in [`docs/OVERVIEW.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/OVERVIEW.md).",
             "media": {
-              "image": "media/placeholders/dashboard-tab-overview.png",
-              "altText": "AristoByte dashboard overview tab placeholder"
+              "image": "media/assets/dashboard-tab-overview.png",
+              "altText": "AristoByte dashboard overview tab"
             }
           },
           {
@@ -139,8 +143,8 @@
             "title": "Installation Tab",
             "description": "Follow install options in [`docs/INSTALLATION.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/INSTALLATION.md).",
             "media": {
-              "image": "media/placeholders/dashboard-tab-installation.png",
-              "altText": "AristoByte dashboard installation tab placeholder"
+              "image": "media/assets/dashboard-tab-installation.png",
+              "altText": "AristoByte dashboard installation tab"
             }
           },
           {
@@ -148,8 +152,8 @@
             "title": "Customization Tab",
             "description": "Tune your editor with [`docs/CUSTOMIZATION.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/CUSTOMIZATION.md).",
             "media": {
-              "image": "media/placeholders/dashboard-tab-customization.png",
-              "altText": "AristoByte dashboard customization tab placeholder"
+              "image": "media/assets/dashboard-tab-customization.png",
+              "altText": "AristoByte dashboard customization tab"
             }
           },
           {
@@ -157,8 +161,8 @@
             "title": "Accessibility Tab",
             "description": "Read accessibility guidance in [`docs/ACCESSIBILITY.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/ACCESSIBILITY.md).",
             "media": {
-              "image": "media/placeholders/dashboard-tab-accessibility.png",
-              "altText": "AristoByte dashboard accessibility tab placeholder"
+              "image": "media/assets/dashboard-tab-accessibility.png",
+              "altText": "AristoByte dashboard accessibility tab"
             }
           },
           {
@@ -166,14 +170,19 @@
             "title": "Troubleshooting Tab",
             "description": "Fix common issues using [`docs/TROUBLESHOOTING.md`](https://github.com/aristobyte/aristo-theme-vscode-extension/blob/master/docs/TROUBLESHOOTING.md).",
             "media": {
-              "image": "media/placeholders/dashboard-tab-troubleshooting.png",
-              "altText": "AristoByte dashboard troubleshooting tab placeholder"
+              "image": "media/assets/dashboard-tab-troubleshooting.png",
+              "altText": "AristoByte dashboard troubleshooting tab"
             }
           }
         ]
       }
     ],
     "commands": [
+      {
+        "command": "aristobyteTheme.openHome",
+        "title": "AristoByte: Open Home",
+        "category": "AristoByte"
+      },
       {
         "command": "aristobyteTheme.openDashboard",
         "title": "AristoByte: Open Getting Started Dashboard",
@@ -208,6 +217,16 @@
           "default": true,
           "description": "Open the AristoByte Getting Started dashboard after install/update."
         },
+        "aristobyteTheme.postInstallExperience": {
+          "type": "string",
+          "enum": [
+            "home",
+            "walkthrough",
+            "none"
+          ],
+          "default": "home",
+          "markdownDescription": "Post-install/update surface: `home` opens the rich AristoByte webview, `walkthrough` opens VS Code walkthrough, `none` disables automatic opening."
+        },
         "aristobyteTheme.defaultThemeOnInstall": {
           "type": "string",
           "enum": [
@@ -229,6 +248,7 @@
   "main": "./extension.js",
   "activationEvents": [
     "onStartupFinished",
+    "onCommand:aristobyteTheme.openHome",
     "onCommand:aristobyteTheme.openDashboard",
     "onCommand:aristobyteTheme.openDocsIndex",
     "onCommand:aristobyteTheme.openMarketplacePage",

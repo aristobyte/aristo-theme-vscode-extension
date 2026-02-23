@@ -23,10 +23,20 @@
 2. Run `Extensions: Install from VSIX...`.
 3. Reload VS Code.
 
+## Option 4: Build from source (developer/local)
+
+```bash
+git clone https://github.com/aristobyte/aristo-theme-vscode-extension.git
+cd aristo-theme-vscode-extension
+yarn install --frozen-lockfile
+yarn package
+yarn install:local
+```
+
 ## Verify installation
 
 - Open Command Palette.
 - Run `Preferences: Color Theme`.
 - Confirm `AristoByte Dark` and `AristoByte Light` are visible.
 
-![Installation Placeholder](../media/placeholders/installation-steps-placeholder.png)
+![Installation Steps](../media/assets/installation-steps.gif)

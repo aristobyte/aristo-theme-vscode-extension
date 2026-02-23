@@ -20,7 +20,7 @@
 
 ## Broken icons/images in docs
 
-- Replace placeholder assets listed in `docs/IMAGE_REPLACEMENT_MAP.md`.
-- Keep filenames unchanged when possible to avoid broken links.
+- Ensure referenced files exist under `media/assets/`.
+- Keep filenames aligned with documentation links.
 
-![Troubleshooting Placeholder](../media/placeholders/troubleshooting-flows-placeholder.png)
+![Troubleshooting Flow](../media/assets/troubleshooting-flows.gif)

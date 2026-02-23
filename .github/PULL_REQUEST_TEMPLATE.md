@@ -13,7 +13,7 @@ Describe what changed and why.
 
 ## Validation
 
-- [ ] I packaged the extension locally (`npm run package`) or verified metadata changes.
+- [ ] I packaged the extension locally (`yarn package`) or verified metadata changes.
 - [ ] I tested theme selection in VS Code (`AristoByte Dark` / `AristoByte Light`).
 - [ ] I added or updated docs in `docs/` when needed.
 - [ ] I attached screenshots for visual changes.

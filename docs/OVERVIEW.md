@@ -27,7 +27,14 @@ Inside the extension page in VS Code, open the **Walkthrough** to access:
 - FAQ: `docs/FAQ.md`
 - Support: `docs/SUPPORT.md`
 - Privacy: `docs/PRIVACY.md`
+- Website: <https://aristobyte.com>
 
-## Screenshot placeholders
+## Screenshot
 
-![Overview Placeholder](../media/placeholders/overview-hero-placeholder.png)
+![Overview](../media/assets/overview-hero.png)
+
+---
+
+![AristoByte Team](../media/assets/profile.png)
+
+By AristoByte Team

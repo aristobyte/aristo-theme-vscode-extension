@@ -13,7 +13,7 @@ This repository is a VS Code color theme extension. Contributions typically invo
 ## Prerequisites
 
 - Node.js 20+
-- npm 10+
+- Yarn 1.x
 - VS Code 1.105+
 
 ## Local workflow
@@ -21,19 +21,19 @@ This repository is a VS Code color theme extension. Contributions typically invo
 1. Install dependencies:
 
 ```bash
-npm install
+yarn install --frozen-lockfile
 ```
 
 2. Package the extension:
 
 ```bash
-npm run package
+yarn package
 ```
 
 3. Install the generated `.vsix` into VS Code:
 
 ```bash
-npm run install:local
+yarn install:local
 ```
 
 4. Verify in VS Code:
@@ -53,7 +53,7 @@ npm run install:local
 
 Releases are automated via GitHub Actions and run only from `master`.
 
-1. Bump version in `package.json` (for example `npm run release:patch`).
+1. Bump version in `package.json` (for example `yarn release:patch`).
 2. Update `CHANGELOG.md`.
 3. Merge into `master`.
 4. The `Release` workflow publishes to:
