@@ -3,7 +3,7 @@
   "displayName": "AristoTheme - AristoByte Theme",
   "description": "A modern, sleek VS Code theme designed for developers who value clarity and productivity. AristoByte Theme combines a tech-forward color palette with high-contrast syntax highlighting, optimized for long coding sessions and deep focus.",
   "version": "0.0.0",
-  "publisher": "aristobyte-team",
+  "publisher": "aristobyte",
   "homepage": "https://github.com/aristobyte/aristo-theme-vscode-extension#readme",
   "preview": false,
   "qna": "https://github.com/aristobyte/aristo-theme-vscode-extension/discussions",
@@ -22,13 +22,13 @@
   ],
   "badges": [
     {
-      "url": "https://img.shields.io/visual-studio-marketplace/v/aristobyte-team.aristo-theme-vscode-color-theme?label=VS%20Marketplace",
-      "href": "https://marketplace.visualstudio.com/items?itemName=aristobyte-team.aristo-theme-vscode-color-theme",
+      "url": "https://img.shields.io/visual-studio-marketplace/v/aristobyte.aristo-theme-vscode-color-theme?label=VS%20Marketplace",
+      "href": "https://marketplace.visualstudio.com/items?itemName=aristobyte.aristo-theme-vscode-color-theme",
       "description": "VS Code Marketplace version"
     },
     {
-      "url": "https://img.shields.io/open-vsx/v/aristobyte-team/aristo-theme-vscode-color-theme?label=Open%20VSX",
-      "href": "https://open-vsx.org/extension/aristobyte-team/aristo-theme-vscode-color-theme",
+      "url": "https://img.shields.io/open-vsx/v/aristobyte/aristo-theme-vscode-color-theme?label=Open%20VSX",
+      "href": "https://open-vsx.org/extension/aristobyte/aristo-theme-vscode-color-theme",
       "description": "Open VSX version"
     }
   ],
@@ -53,7 +53,7 @@
     "release:minor": "npm version minor",
     "release:major": "npm version major",
     "clean:vsix": "rm -f *.vsix",
-    "uninstall:local": "code --uninstall-extension aristobyte-team.aristo-theme-vscode-color-theme",
+    "uninstall:local": "code --uninstall-extension aristobyte.aristo-theme-vscode-color-theme",
     "reinstall:local": "npm run uninstall:local || true && npm run dev",
     "publish:marketplace:token": "@vscode/vsce publish -p \"$VSCE_PAT\"",
     "publish:ovsx:token": "ovsx publish -p \"$OVSX_PAT\"",
@@ -63,7 +63,9 @@
     "bump:minor": "scripts/bump.sh minor",
     "bump:major": "scripts/bump.sh major",
     "build:release": "scripts/build.sh",
-    "publish:release": "scripts/publish.sh"
+    "publish:release": "scripts/publish.sh",
+    "release:create": "scripts/create-github-release.sh",
+    "release:upload-assets": "scripts/upload-release-assets.sh"
   },
   "repository": {
     "type": "git",

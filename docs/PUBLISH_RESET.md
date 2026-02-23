@@ -24,7 +24,7 @@ code --uninstall-extension <publisher>.<name>
 Example:
 
 ```bash
-code --uninstall-extension aristobyte-team.aristo-theme-vscode-color-theme
+code --uninstall-extension aristobyte.aristo-theme-vscode-color-theme
 ```
 
 ## 3) Remove old extension from VS Code Marketplace (if desired)
@@ -36,7 +36,7 @@ npx @vscode/vsce unpublish <publisher>.<name>
 Example:
 
 ```bash
-npx @vscode/vsce unpublish aristobyte-team.aristo-theme-vscode-color-theme
+npx @vscode/vsce unpublish aristobyte.aristo-theme-vscode-color-theme
 ```
 
 ## 4) Remove old extension from Open VSX (if desired)
@@ -48,7 +48,7 @@ npx ovsx unpublish <publisher>.<name>
 Example:
 
 ```bash
-npx ovsx unpublish aristobyte-team.aristo-theme-vscode-color-theme
+npx ovsx unpublish aristobyte.aristo-theme-vscode-color-theme
 ```
 
 ## 5) Publish the new extension identity
