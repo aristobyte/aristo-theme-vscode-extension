@@ -105,20 +105,14 @@ jobs:
           git push origin HEAD:master
           git push origin "${{ steps.bump.outputs.tag }}"
 
-      - name: Create GitHub release from tag
+      - name: Build extension
+        run: scripts/build.sh
+
+      - name: Create GitHub release from tag (with VSIX)
         env:
           GH_TOKEN: ${{ steps.app_token.outputs.token }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: scripts/create-github-release.sh "${{ steps.bump.outputs.tag }}"
-
-      - name: Build extension
-        run: scripts/build.sh
-
-      - name: Upload VSIX to GitHub release
-        env:
-          GH_TOKEN: ${{ steps.app_token.outputs.token }}
-          GITHUB_REPOSITORY: ${{ github.repository }}
-        run: scripts/upload-release-assets.sh "${{ steps.bump.outputs.tag }}"
 
       - name: Publish extension
         env:
