@@ -2,7 +2,7 @@
   "name": "aristo-theme-vscode-color-theme",
   "displayName": "AristoTheme - AristoByte Color Theme",
   "description": "A modern, sleek VS Code theme designed for developers who value clarity and productivity. AristoByte Theme combines a tech-forward color palette with high-contrast syntax highlighting, optimized for long coding sessions and deep focus.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "publisher": "aristobyte",
   "author": {
     "name": "AristoByte Team",
