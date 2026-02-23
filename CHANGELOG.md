@@ -23,6 +23,12 @@ All notable changes to this project are documented in this file.
 - Packaging file list expanded to include docs and media assets.
 - Release workflow hardened with explicit secret checks and safer publish tooling commands.
 
+## [1.1.0] - 2026-02-23
+
+### Changed
+
+- Automated minor release bump from commit: `feat: remove the image placeholders and enhance the overview UI`.
+
 ## [1.0.0] - 2026-02-23
 
 ### Changed
