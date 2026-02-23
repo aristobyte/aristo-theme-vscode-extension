@@ -27,7 +27,7 @@ jobs:
   release:
     name: Bump, Build, Publish
     runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'workflow_dispatch' || !startsWith(github.event.head_commit.message, 'chore(release):') }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && !startsWith(github.event.head_commit.message, 'chore(release):') && !contains(github.event.head_commit.message, '[skip ci]') && !contains(github.event.head_commit.message, '[ci skip]')) }}
 
     steps:
       - name: Create GitHub App token
@@ -93,17 +93,28 @@ jobs:
 
           git commit -m "chore(release): v${{ steps.bump.outputs.version }} [skip ci]"
 
-      - name: Create tag
-        run: |
-          git tag "${{ steps.bump.outputs.tag }}"
-
-      - name: Push commit and tag
+      - name: Push release commit
         env:
           GH_APP_TOKEN: ${{ steps.app_token.outputs.token }}
         run: |
           git remote set-url origin "https://x-access-token:${GH_APP_TOKEN}@github.com/${{ github.repository }}.git"
           git push origin HEAD:master
-          git push origin "${{ steps.bump.outputs.tag }}"
+
+      - name: Create tag via GitHub API as aristo-bot
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token }}
+        run: |
+          TAG="${{ steps.bump.outputs.tag }}"
+          SHA="$(git rev-parse HEAD)"
+
+          if gh api "repos/${{ github.repository }}/git/ref/tags/${TAG}" >/dev/null 2>&1; then
+            echo "Tag ${TAG} already exists."
+          else
+            gh api --method POST "repos/${{ github.repository }}/git/refs" \
+              -f ref="refs/tags/${TAG}" \
+              -f sha="${SHA}"
+            echo "Created tag ${TAG} at ${SHA}"
+          fi
 
       - name: Build extension
         run: scripts/build.sh
