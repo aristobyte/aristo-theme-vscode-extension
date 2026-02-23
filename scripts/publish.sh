@@ -21,7 +21,7 @@ if [[ -z "$VSIX_FILE" ]]; then
 fi
 
 echo "[publish] Publishing to VS Code Marketplace"
-npx @vscode/vsce publish --no-yarn -p "$VSCE_PAT"
+npx @vscode/vsce publish -p "$VSCE_PAT"
 
 echo "[publish] Publishing to Open VSX using $VSIX_FILE"
 npx ovsx publish "$VSIX_FILE" -p "$OVSX_PAT"

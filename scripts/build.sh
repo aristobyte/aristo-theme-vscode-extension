@@ -8,6 +8,6 @@ echo "[build] Cleaning previous VSIX files"
 rm -f *.vsix
 
 echo "[build] Packaging extension"
-npx @vscode/vsce package --no-yarn
+npx @vscode/vsce package
 
 echo "[build] Build complete"
