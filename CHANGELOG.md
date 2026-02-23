@@ -23,6 +23,12 @@ All notable changes to this project are documented in this file.
 - Packaging file list expanded to include docs and media assets.
 - Release workflow hardened with explicit secret checks and safer publish tooling commands.
 
+## [1.3.1] - 2026-02-23
+
+### Changed
+
+- Automated patch release bump from commit: `fix: resolve the publisher issues`.
+
 ## [1.3.0] - 2026-02-23
 
 ### Changed
