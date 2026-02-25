@@ -29,6 +29,12 @@ All notable changes to this project are documented in this file.
 - Consumer/developer documentation split and updated to Yarn-first flows.
 - Walkthrough/theme metadata expanded to reflect all available variants.
 
+## [1.2.1] - 2026-02-25
+
+### Changed
+
+- Automated patch release bump from commit: `fix: resolve the issue with duplicated company logo in dashboard`.
+
 ## [1.2.0] - 2026-02-25
 
 ### Changed
