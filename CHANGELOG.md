@@ -29,6 +29,12 @@ All notable changes to this project are documented in this file.
 - Consumer/developer documentation split and updated to Yarn-first flows.
 - Walkthrough/theme metadata expanded to reflect all available variants.
 
+## [1.2.0] - 2026-02-25
+
+### Changed
+
+- Automated minor release bump from commit: `feat: add multi-variant themes, refactor dashboard UI templates, and migrate assets structure`.
+
 ## [1.1.0] - 2026-02-23
 
 ### Changed
