@@ -92,10 +92,7 @@ function loadUiFile(context, fileName) {
 function getHomeHtml(context, webview) {
   const nonce = getNonce();
   const iconUri = webview.asWebviewUri(
-    vscode.Uri.joinPath(context.extensionUri, 'assets', 'logo.png')
-  );
-  const companyLogoUri = webview.asWebviewUri(
-    vscode.Uri.joinPath(context.extensionUri, 'assets', 'aristobyte-logo.png')
+    vscode.Uri.joinPath(context.extensionUri, "assets", "logo.png"),
   );
   const bannerUri = webview.asWebviewUri(
     vscode.Uri.joinPath(
@@ -130,7 +127,6 @@ function getHomeHtml(context, webview) {
     "{{STYLE}}": `<style>${importedStyles}</style>`,
     "{{SCRIPT}}": `<script nonce="${nonce}">${importedScript}</script>`,
     "{{ICON_URI}}": String(iconUri),
-    "{{COMPANY_LOGO_URI}}": String(companyLogoUri),
     "{{BANNER_URI}}": String(bannerUri),
     "{{USAGE_URI}}": String(usageUri),
     "{{ACCESS_URI}}": String(accessUri),
