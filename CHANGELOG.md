@@ -6,28 +6,28 @@ All notable changes to this project are documented in this file.
 
 ### Added
 
-- In-extension walkthrough dashboard with tab-style onboarding sections.
-- Full end-user documentation set in `docs/` (installation, usage, customization, accessibility, troubleshooting, FAQ, support, privacy).
-- Final visual asset system under `media/assets/`.
-- Marketplace metadata checklist and release documentation.
-- Publish reset guide for removing old extension versions and restarting with a new identity.
-- Lightweight runtime layer (`extension.js`) with AristoByte dashboard/docs/apply-theme commands.
-- Theme coverage expansion:
-  - Dark theme at maximum built-in VS Code component coverage.
-  - Light theme rebuilt with full key parity and light-safe brand contrast.
+- Six new theme variants:
+  - `AristoByte Midnight`
+  - `AristoByte Dusk`
+  - `AristoByte High Contrast Dark`
+  - `AristoByte OLED`
+  - `AristoByte Soft Light`
+  - `AristoByte High Contrast Light`
+- Command palette actions for all theme variants.
+- Dedicated UI template architecture under `ui/`:
+  - `ui/index.html`
+  - `ui/style.css`
+  - `ui/script.js`
+- Expanded dashboard resources with distribution/social/support links.
+- Author branding section in dashboard with AristoByte company identity.
 
 ### Changed
 
-- `README.md` transformed into a complete product and documentation hub.
-- Extension metadata expanded for stronger marketplace discoverability.
-- Packaging file list expanded to include docs and media assets.
-- Release workflow hardened with explicit secret checks and safer publish tooling commands.
-
-## [1.2.0] - 2026-02-23
-
-### Changed
-
-- Automated minor release bump from commit: `feat: add the tag jobs`.
+- Asset structure migrated from `media/assets/` to `assets/` and references updated across docs/runtime/manifest.
+- Extension package icon path aligned to product logo (`assets/logo.png`).
+- Dashboard branding aligned to both product and company logos.
+- Consumer/developer documentation split and updated to Yarn-first flows.
+- Walkthrough/theme metadata expanded to reflect all available variants.
 
 ## [1.1.0] - 2026-02-23
 
@@ -40,33 +40,3 @@ All notable changes to this project are documented in this file.
 ### Changed
 
 - Automated major release bump from commit: `refactor: comment out the release and tag part`.
-
-## [1.3.1] - 2026-02-23
-
-### Changed
-
-- Automated patch release bump from commit: `fix: resolve the publisher issues`.
-
-## [1.3.0] - 2026-02-23
-
-### Changed
-
-- Automated minor release bump from commit: `feat: finalise the product`.
-
-## [1.2.0] - 2026-02-23
-
-### Changed
-
-- Automated minor release bump from commit: `feat: finalise the product`.
-
-## [1.1.0] - 2026-02-22
-
-### Changed
-
-- Automated minor release bump from commit: `feat: finalise the product`.
-
-## [1.0.4] - 2026-02-22
-
-### Added
-
-- Initial public theme release.

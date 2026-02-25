@@ -36,4 +36,4 @@ Use the issue tracker and include:
 - Theme variant
 - Screenshots and exact color keys
 
-![Accessibility Contrast](../media/assets/accessibility-contrast.png)
+![Accessibility Contrast](../assets/accessibility-contrast.png)

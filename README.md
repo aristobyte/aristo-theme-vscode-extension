@@ -6,7 +6,15 @@ AristoByte is a production-ready VS Code theme system built for readability, min
 
 AristoByte ships with:
 
-- Two complete themes (`AristoByte Dark`, `AristoByte Light`)
+- Eight complete themes:
+  - `AristoByte Dark`
+  - `AristoByte Midnight`
+  - `AristoByte Dusk`
+  - `AristoByte High Contrast Dark`
+  - `AristoByte OLED`
+  - `AristoByte Light`
+  - `AristoByte Soft Light`
+  - `AristoByte High Contrast Light`
 - Full workbench/editor coverage
 - Onboarding dashboard inside VS Code
 - Structured documentation and support guides
@@ -25,11 +33,26 @@ AristoByte ships with:
 - Broad VS Code component coverage
 - Semantic token support
 
+### AristoByte Midnight / Dusk / OLED
+
+- Deeper or warmer dark variants for different working environments
+- Retain AristoByte syntax semantics with tuned contrast models
+
+### AristoByte High Contrast Dark / High Contrast Light
+
+- Accessibility-first high contrast variants with stronger boundaries
+- Built for maximum legibility across workbench + editor surfaces
+
 ### AristoByte Light
 
 - Light counterpart with readability-tuned contrast
 - Same structural key coverage as dark
 - Brand association preserved with adapted light-safe accents
+
+### AristoByte Soft Light
+
+- Softer daytime palette with reduced visual intensity
+- Keeps semantic clarity while lowering glare
 
 ## In-Editor Dashboard
 
@@ -54,6 +77,12 @@ You can open it via command palette:
 - `AristoByte: Open Marketplace/Homepage`
 - `AristoByte: Apply Dark Theme`
 - `AristoByte: Apply Light Theme`
+- `AristoByte: Apply Midnight Theme`
+- `AristoByte: Apply Dusk Theme`
+- `AristoByte: Apply High Contrast Dark Theme`
+- `AristoByte: Apply High Contrast Light Theme`
+- `AristoByte: Apply OLED Theme`
+- `AristoByte: Apply Soft Light Theme`
 
 ## Settings
 
@@ -82,9 +111,9 @@ You can open it via command palette:
 
 ## Visual Assets
 
-- Directory: `media/assets/`
+- Directory: `assets/`
 
-![Marketplace Banner](media/assets/marketplace-banner.png)
+![Marketplace Banner](assets/marketplace-banner.png)
 
 ## Installation
 

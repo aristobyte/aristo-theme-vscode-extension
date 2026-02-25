@@ -39,4 +39,4 @@ yarn install:local
 - Run `Preferences: Color Theme`.
 - Confirm `AristoByte Dark` and `AristoByte Light` are visible.
 
-![Installation Steps](../media/assets/installation-steps.gif)
+![Installation Steps](../assets/installation-steps.gif)

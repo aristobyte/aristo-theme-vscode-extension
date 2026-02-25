@@ -20,7 +20,7 @@
 
 ## Broken icons/images in docs
 
-- Ensure referenced files exist under `media/assets/`.
+- Ensure referenced files exist under `assets/`.
 - Keep filenames aligned with documentation links.
 
-![Troubleshooting Flow](../media/assets/troubleshooting-flows.gif)
+![Troubleshooting Flow](../assets/troubleshooting-flows.gif)

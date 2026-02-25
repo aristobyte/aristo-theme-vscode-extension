@@ -5,7 +5,13 @@ AristoByte is primarily a theme extension with a lightweight runtime layer for b
 ## Theme assets
 
 - `AristoByte Dark`
+- `AristoByte Midnight`
+- `AristoByte Dusk`
+- `AristoByte High Contrast Dark`
+- `AristoByte OLED`
 - `AristoByte Light`
+- `AristoByte Soft Light`
+- `AristoByte High Contrast Light`
 
 ## Compatibility
 
@@ -29,6 +35,12 @@ AristoByte includes a walkthrough-based dashboard for:
 - `AristoByte: Open Marketplace/Homepage`
 - `AristoByte: Apply Dark Theme`
 - `AristoByte: Apply Light Theme`
+- `AristoByte: Apply Midnight Theme`
+- `AristoByte: Apply Dusk Theme`
+- `AristoByte: Apply High Contrast Dark Theme`
+- `AristoByte: Apply High Contrast Light Theme`
+- `AristoByte: Apply OLED Theme`
+- `AristoByte: Apply Soft Light Theme`
 
 ## Settings
 

@@ -2,7 +2,7 @@
 
 ## Is this extension only for dark mode?
 
-No. It includes both dark and light variants.
+No. It includes multiple dark and light variants, including high-contrast and OLED options.
 
 ## Does it support semantic highlighting?
 

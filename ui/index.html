@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="{{CSP}}" />
+    <title>AristoByte Home</title>
+    {{STYLE}}
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="nav">
+        <div class="brand">
+        <img src="{{ICON_URI}}" alt="AristoTheme product logo" />
+          <h1>AristoByte Home</h1>
+        </div>
+        <p class="sub">Theme Control Center</p>
+        <div class="menu">
+          <button class="tab active" data-tab="welcome">Welcome</button>
+          <button class="tab" data-tab="themes">Themes</button>
+          <button class="tab" data-tab="docs">Docs</button>
+          <button class="tab" data-tab="resources">Resources</button>
+        </div>
+        <div class="quick">
+          <a class="link" href="#" data-command="openDashboard"
+            >Open Walkthrough</a
+          >
+          <a class="link" href="#" data-command="openDocsIndex"
+            >Open Docs Index</a
+          >
+          <a class="link" href="#" data-command="pickTheme"
+            >Open Theme Picker</a
+          >
+          <a class="link" href="#" data-command="openMarketplacePage"
+            >Open Marketplace</a
+          >
+        </div>
+      </aside>
+      <main class="main">
+        <section class="section active" data-section="welcome">
+          <div class="hero">
+            <div>
+              <h2>AristoTheme</h2>
+              <p>
+                Production-grade multi-variant themes with high-coverage UI
+                tokens, semantic highlighting, and a focused developer
+                experience by AristoByte Team.
+              </p>
+              <div class="actions">
+                <button class="btn" data-command="pickTheme">
+                  Open Theme Picker
+                </button>
+                <button class="btn secondary" data-command="openDashboard">
+                  Open Onboarding
+                </button>
+                <button class="btn secondary" data-url="{{LINK_WEBSITE}}">
+                  Visit Website
+                </button>
+              </div>
+            </div>
+            <img src="{{BANNER_URI}}" alt="AristoByte banner" />
+          </div>
+          <div class="grid">
+            <article class="card">
+              <h3>Why AristoByte</h3>
+              <p>
+                Minimal visuals, strong syntax contrast, and consistent
+                workbench styling tuned for long coding sessions.
+              </p>
+              <ul class="list">
+                <li>Dark, Light, and specialized variants</li>
+                <li>Semantic token color support</li>
+                <li>Optimized editor + terminal palette</li>
+              </ul>
+            </article>
+            <article class="card">
+              <h3>Editor Preview</h3>
+              <p>Representative token balance across common languages.</p>
+              <img src="{{USAGE_URI}}" alt="Editor preview" />
+            </article>
+            <article class="card">
+              <h3>About The Author</h3>
+              <img
+                class="company-logo"
+                src="{{COMPANY_LOGO_URI}}"
+                alt="AristoByte company logo"
+              />
+              <p>
+                AristoByte Team builds engineering tools and design-focused
+                developer products.
+              </p>
+              <img src="{{PROFILE_URI}}" alt="AristoByte Team profile" />
+              <div class="actions">
+                <button class="btn secondary" data-url="{{LINK_SOURCE}}">
+                  Source Code
+                </button>
+                <button class="btn secondary" data-url="{{LINK_LINKEDIN}}">
+                  LinkedIn
+                </button>
+                <button class="btn secondary" data-url="{{LINK_YOUTUBE}}">
+                  YouTube
+                </button>
+              </div>
+            </article>
+            <article class="card">
+              <h3>Distribution</h3>
+              <p>
+                Install from your preferred registry and keep both channels in
+                sync.
+              </p>
+              <div class="actions">
+                <button class="btn secondary" data-url="{{LINK_MARKETPLACE}}">
+                  VS Marketplace
+                </button>
+                <button class="btn secondary" data-url="{{LINK_OPEN_VSX}}">
+                  Open VSX
+                </button>
+                <button class="btn secondary" data-url="{{LINK_NPM}}">
+                  NPM Profile
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="section" data-section="themes">
+          <div class="hero">
+            <div>
+              <h2>Theme Modes</h2>
+              <p>
+                Switch quickly between all AristoByte theme variants from one
+                place.
+              </p>
+              <div class="actions">
+                <button class="btn" data-command="applyDarkTheme">Dark</button>
+                <button class="btn secondary" data-command="applyMidnightTheme">
+                  Set Midnight
+                </button>
+                <button class="btn secondary" data-command="applyDuskTheme">
+                  Dusk
+                </button>
+                <button
+                  class="btn secondary"
+                  data-command="applyHighContrastDarkTheme"
+                >
+                  HC Dark
+                </button>
+                <button class="btn secondary" data-command="applyOledTheme">
+                  OLED
+                </button>
+                <button class="btn secondary" data-command="applyLightTheme">
+                  Light
+                </button>
+                <button
+                  class="btn secondary"
+                  data-command="applySoftLightTheme"
+                >
+                  Soft Light
+                </button>
+                <button
+                  class="btn secondary"
+                  data-command="applyHighContrastLightTheme"
+                >
+                  HC Light
+                </button>
+                <button class="btn secondary" data-command="pickTheme">
+                  All Themes...
+                </button>
+              </div>
+            </div>
+            <img src="{{ACCESS_URI}}" alt="Accessibility preview" />
+          </div>
+        </section>
+        <section class="section" data-section="docs">
+          <div class="card">
+            <h3>Documentation</h3>
+            <p>
+              Browse setup, customization, accessibility, and troubleshooting
+              guides.
+            </p>
+            <div class="actions">
+              <button class="btn secondary" data-command="openDocsIndex">
+                Open Docs Index
+              </button>
+              <button class="btn secondary" data-command="openDashboard">
+                Open Walkthrough
+              </button>
+            </div>
+          </div>
+        </section>
+        <section class="section" data-section="resources">
+          <div class="card">
+            <h3>Resources</h3>
+            <p>Distribution links, social channels, and support routes.</p>
+            <div class="actions">
+              <button class="btn secondary" data-url="{{LINK_MARKETPLACE}}">
+                Marketplace
+              </button>
+              <button class="btn secondary" data-url="{{LINK_OPEN_VSX}}">
+                Open VSX
+              </button>
+              <button class="btn secondary" data-url="{{LINK_SOURCE}}">
+                GitHub
+              </button>
+              <button class="btn secondary" data-command="openDocsIndex">
+                Docs
+              </button>
+              <button class="btn secondary" data-url="{{LINK_WEBSITE}}">
+                Website
+              </button>
+              <button class="btn secondary" data-url="{{LINK_STACKOVERFLOW}}">
+                Stack Overflow
+              </button>
+              <button class="btn secondary" data-url="{{LINK_LINKEDIN}}">
+                LinkedIn
+              </button>
+              <button class="btn secondary" data-url="{{LINK_FACEBOOK}}">
+                Facebook
+              </button>
+              <button class="btn secondary" data-url="{{LINK_INSTAGRAM}}">
+                Instagram
+              </button>
+              <button class="btn secondary" data-url="{{LINK_YOUTUBE}}">
+                YouTube
+              </button>
+              <button class="btn secondary" data-url="{{LINK_OPENCOLLECTIVE}}">
+                Open Collective
+              </button>
+              <button class="btn secondary" data-url="{{LINK_PATREON}}">
+                Patreon
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    {{SCRIPT}}
+  </body>
+</html>

@@ -5,7 +5,13 @@ AristoByte Color Theme delivers a focused editor experience for long coding sess
 ## What is included
 
 - `AristoByte Dark`
+- `AristoByte Midnight`
+- `AristoByte Dusk`
+- `AristoByte High Contrast Dark`
+- `AristoByte OLED`
 - `AristoByte Light`
+- `AristoByte Soft Light`
+- `AristoByte High Contrast Light`
 
 ## End-user dashboard tabs
 
@@ -31,10 +37,10 @@ Inside the extension page in VS Code, open the **Walkthrough** to access:
 
 ## Screenshot
 
-![Overview](../media/assets/overview-hero.png)
+![Overview](../assets/overview-hero.png)
 
 ---
 
-![AristoByte Team](../media/assets/profile.png)
+![AristoByte Team](../assets/profile.png)
 
 By AristoByte Team

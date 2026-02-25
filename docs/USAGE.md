@@ -4,6 +4,15 @@
 
 - Command Palette: `Preferences: Color Theme`
 - Shortcut: `Ctrl+K Ctrl+T` (Windows/Linux) or `Cmd+K Cmd+T` (macOS)
+- Quick commands:
+  - `AristoByte: Apply Dark Theme`
+  - `AristoByte: Apply Midnight Theme`
+  - `AristoByte: Apply Dusk Theme`
+  - `AristoByte: Apply High Contrast Dark Theme`
+  - `AristoByte: Apply OLED Theme`
+  - `AristoByte: Apply Light Theme`
+  - `AristoByte: Apply Soft Light Theme`
+  - `AristoByte: Apply High Contrast Light Theme`
 
 ## Inspect token colors
 
@@ -31,4 +40,4 @@ Validate the theme on:
 - JSON / YAML / TOML
 - Markdown
 
-![Code Editor Usage](../media/assets/usage-code-editor.png)
+![Code Editor Usage](../assets/usage-code-editor.png)
