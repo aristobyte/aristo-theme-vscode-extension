@@ -32,7 +32,7 @@ jobs:
     steps:
       - name: Create GitHub App token
         id: app_token
-        uses: actions/create-github-app-token@v1
+        uses: actions/create-github-app-token@v2
         with:
           app-id: ${{ secrets.ARISTO_BOT_ID }}
           installation-id: ${{ secrets.ARISTO_BOT_INSTALLATION_ID }}
